@@ -1,0 +1,35 @@
+runtime:
+  device: "cpu"              # "cuda:0" nếu có GPU
+  input_width: 1600
+  input_height: 900
+  show_window: true
+  save_video: false
+  output_video: "outputs/out.mp4"
+  output_csv: "outputs/fight_events.csv"
+
+detector:
+  model_path_large: "yolov8x.pt"      # dùng cho privacy
+  model_path_small: "yolov8n.pt"      # dùng cho fight
+  classes: [0]                        # person
+  conf: 0.25
+
+tracker:
+  max_age: 60
+  n_init: 2
+  nms_max_overlap: 0.7
+  reid_model: ""                      # tuỳ chọn nếu dùng ReID
+
+face:
+  mediapipe:
+    model_selection: 0
+    min_detection_confidence: 0.40
+  privacy:
+    method: "mosaic"        # "blur" | "mosaic"
+    blur_level: 25
+    mosaic_size: 15
+
+event_fight:
+  v_thresh: 5.0
+  iou_thresh: 0.10
+  low_speed: 2.0
+  low_iou: 0.05
