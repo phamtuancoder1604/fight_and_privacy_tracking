@@ -157,14 +157,8 @@ streamlit run app/review_app.py
 - **app** – Streamlit review UI.
 - **scripts** – Quick-run scripts.
   
-## 8. Performance Metrics
-- FPS (processing speed): 17.8 FPS (RTX 3060, 720p video)
-- Tracking: MOTA 91.5%, MOTP 0.23, ID switches: 5
-- Fight detection: Precision 89%, Recall 84%, F1-score 0.86
-- Event latency: 0.9s average after fight start
 
-
-## 9. Tips & Optimization
+## 8. Tips & Optimization
 - Reduce lag: lower `input_width` / `input_height` in the original scripts.
 - Reduce false positives: increase YOLO `conf` parameter.
 - Use GPU: install CUDA-enabled PyTorch; YOLO will auto-use GPU if available.
@@ -172,5 +166,5 @@ streamlit run app/review_app.py
 
 ---
 
-## 10. License
+## 9. License
 MIT License – you are free to use, modify, and distribute with attribution.
